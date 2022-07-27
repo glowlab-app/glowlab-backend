@@ -1,0 +1,35 @@
+{
+  "name": "sqwid-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "nodemon": "nodemon --no-deprecation ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polyjuice-provider/ethers": "^0.1.5",
+    "@polyjuice-provider/web3": "^0.1.5",
+    "@reef-defi/evm-provider": "^1.0.4",
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ethereumjs-util": "^7.1.4",
+    "express": "^4.17.1",
+    "express-rate-limit": "^6.2.0",
+    "firebase-admin": "^10.0.0",
+    "helmet": "^4.6.0",
+    "ipfs-http-client": "^56.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "nervos-godwoken-integration": "^0.4.1",
+    "nft.storage": "^3.3.0",
+    "redis": "^4.0.3",
+    "sharp": "^0.30.7",
+    "web3": "^1.7.4"
+  }
+}
