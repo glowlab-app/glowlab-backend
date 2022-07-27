@@ -44,7 +44,7 @@ module.exports = () => {
     // router.use ('/verifyjwt', getVerifyJWTRoutes ());
 
     router.get ('/', (req, res) => {
-        res.send ('Sqwid API');
+        res.send ('Tephra API');
     });
 
     return router;
