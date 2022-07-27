@@ -74,7 +74,7 @@ const getAuctionData = (item, names) => {
         highestBid: Number (item.auctionData.highestBid),
         highestBidder: {
             address: item.auctionData.highestBidder,
-            name: names [item.auctionData.highestBidder] || item.auctionData.highestBidder
+            name: names [item.auctionData.highestBidder.toLowerCase ()] || item.auctionData.highestBidder
         },
     }
 }
@@ -95,7 +95,7 @@ const getLoanData = (item, names) => {
         numMinutes: Number (item.loanData.numMinutes),
         lender: {
             address: item.loanData.lender,
-            name: names [item.loanData.lender] || item.loanData.lender
+            name: names [item.loanData.lender.toLowerCase ()] || item.loanData.lender
         }
     }
 }
@@ -340,12 +340,12 @@ const fetchSummary = async (req, res) => {
                 creator: {
                     address: item.item.creator,
                     avatar: `https://avatars.dicebear.com/api/identicon/${item.item.creator}.svg`,
-                    name: names [item.item.creator] || item.item.creator
+                    name: names [item.item.creator.toLowerCase ()] || item.item.creator
                 },
                 owner: {
                     address: item.owner,
                     avatar: `https://avatars.dicebear.com/api/identicon/${item.owner}.svg`,
-                    name: names [item.owner] || item.owner
+                    name: names [item.owner.toLowerCase ()] || item.owner
                 },
                 amount: Number (item.amount),
                 sale: item.state === 1 ? getSaleData (item) : null,
