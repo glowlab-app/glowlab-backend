@@ -115,7 +115,7 @@ const fetchCollection = async (req, res) => {
         creator: {
             id: user?.address || collection.owner,
             name: user?.name || collection.owner,
-            thumb: `https://avatars.dicebear.com/api/identicon/${user?.address || collection.owner}.svg`
+            thumb: `https://avatars.dicebear.com/api/identicon/${user?.address.toLowerCase () || collection.owner.toLowerCase ()}.svg`
         },
         thumb: collection.image
     }
@@ -160,13 +160,13 @@ const fetchPosition = async (req, res) => {
             },
             creator: {
                 address: item.item.creator,
-                avatar: `https://avatars.dicebear.com/api/identicon/${item.item.creator}.svg`,
+                avatar: `https://avatars.dicebear.com/api/identicon/${item.item.creator.toLowerCase ()}.svg`,
                 name: namesObj [item.item.creator.toLowerCase ()] || item.item.creator,
                 royalty: itemRoyalty.royaltyAmount.toNumber ()
             },
             owner: {
                 address: item.owner,
-                avatar: `https://avatars.dicebear.com/api/identicon/${item.owner}.svg`,
+                avatar: `https://avatars.dicebear.com/api/identicon/${item.owner.toLowerCase ()}.svg`,
                 name: namesObj [item.owner.toLowerCase ()] || item.owner
             },
             amount: Number (item.amount),
@@ -339,12 +339,12 @@ const fetchSummary = async (req, res) => {
                 collection: collections [collectionsOfApprovedItems [approvedIds.find (i => i.id === Number (item.item.itemId)).collection]],
                 creator: {
                     address: item.item.creator,
-                    avatar: `https://avatars.dicebear.com/api/identicon/${item.item.creator}.svg`,
+                    avatar: `https://avatars.dicebear.com/api/identicon/${item.item.creator.toLowerCase ()}.svg`,
                     name: names [item.item.creator.toLowerCase ()] || item.item.creator
                 },
                 owner: {
                     address: item.owner,
-                    avatar: `https://avatars.dicebear.com/api/identicon/${item.owner}.svg`,
+                    avatar: `https://avatars.dicebear.com/api/identicon/${item.owner.toLowerCase ()}.svg`,
                     name: names [item.owner.toLowerCase ()] || item.owner
                 },
                 amount: Number (item.amount),
@@ -397,12 +397,12 @@ const fetchPositions = async (req, res) => {
                 collection: collections [collectionsOfApprovedItems [approvedIds.find (i => i.id === Number (item.item.itemId)).collection]],
                 creator: {
                     address: item.item.creator,
-                    avatar: `https://avatars.dicebear.com/api/identicon/${item.item.creator}.svg`,
+                    avatar: `https://avatars.dicebear.com/api/identicon/${item.item.creator.toLowerCase ()}.svg`,
                     name: names [item.item.creator.toLowerCase ()] || item.item.creator
                 },
                 owner: {
                     address: item.owner,
-                    avatar: `https://avatars.dicebear.com/api/identicon/${item.owner}.svg`,
+                    avatar: `https://avatars.dicebear.com/api/identicon/${item.owner.toLowerCase ()}.svg`,
                     name: names [item.owner.toLowerCase ()] || item.owner
                 },
                 amount: Number (item.amount),
