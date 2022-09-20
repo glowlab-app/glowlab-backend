@@ -383,10 +383,10 @@ const fetchPositions = async (req, res) => {
                 limit
             }
         });
-        console.log (Number (type), ownerAddress?.toLowerCase () || ethers.constants.AddressZero, startFrom, startFrom ? Math.min (limit, startFrom) : limit, allowedBytes);
+        // console.log (Number (type), ownerAddress?.toLowerCase () || ethers.constants.AddressZero, startFrom, startFrom ? Math.min (limit, startFrom) : limit, allowedBytes);
         const allRawItems = await utilityContract.fetchPositions (Number (type), ownerAddress?.toLowerCase () || ethers.constants.AddressZero, startFrom, startFrom ? Math.min (limit, startFrom) : limit, allowedBytes);
         let rawItems = allRawItems.filter (item => Number (item.positionId) > 0);
-        console.log (allRawItems);
+        // console.log (allRawItems);
         const { collectibles, collections, names } = await buildObjectsFromItems (rawItems);
         const items = [];
         for (let i = 0; i < rawItems.length; i++) {
@@ -451,13 +451,13 @@ const fetchBalance = async (req, res) => {
 }
 
 const fetchWithdrawable = async (req, res) => {
-    return res.json ({
-        balance: 0
-    });
-    let { evmAddress, address } = req.user;
+    // return res.json ({
+    //     balance: 0
+    // });
+    let { address } = req.user;
     try {
-        if (!evmAddress) evmAddress = await getEVMAddress (address);
-        const balance = await marketplaceContract.addressBalance (evmAddress);
+        // if (!evmAddress) evmAddress = await getEVMAddress (address);
+        const balance = await marketplaceContract.addressBalance (address);
         // const item = await marketplaceContract.fetchItem (5);
         // console.log (item);
         res.status (200).json ({

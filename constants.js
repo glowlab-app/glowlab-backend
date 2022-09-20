@@ -6,7 +6,7 @@ const networks = {
 			erc1155: '0xcCB22CdA4857E1665dE3043FF77ff125c9E0A2A7',
 			utility: '0x15D45AE2f71C708d4dc85e95961d528fdfbbCca4',
         },
-        useCache: false,
+        useCache: true,
     },
     evmos_mainnet: {
         rpc: 'https://eth.bd.evmos.org:8545',
@@ -15,7 +15,7 @@ const networks = {
 			erc1155: '0xcCB22CdA4857E1665dE3043FF77ff125c9E0A2A7',
 			utility: '0x15D45AE2f71C708d4dc85e95961d528fdfbbCca4',
         },
-        useCache: false,
+        useCache: true,
     }
 }
 
