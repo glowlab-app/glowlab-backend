@@ -180,6 +180,19 @@ let ABI = [
     "type": "event"
   },
   {
+    "inputs": [],
+    "name": "MAX_ROYALTY_VALUE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -363,7 +376,7 @@ let ABI = [
             "type": "address"
           }
         ],
-        "internalType": "struct SqwidERC1155Wrapper.WrappedToken",
+        "internalType": "struct GlowlabERC1155Wrapper.WrappedToken",
         "name": "",
         "type": "tuple"
       }

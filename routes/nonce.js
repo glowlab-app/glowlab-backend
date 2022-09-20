@@ -3,8 +3,8 @@ const firebase = require ('../lib/firebase');
 const generateNonce = require ('../lib/nonce');
 const { getWallet } = require ('../lib/getWallet');
 const ethers = require ('ethers');
-const { AddressTranslator } = require ("nervos-godwoken-integration");
-const addressTranslator = new AddressTranslator ();
+// const { AddressTranslator } = require ("nervos-godwoken-integration");
+// const addressTranslator = new AddressTranslator ();
 
 let nonce = (req, res) => {
     firebase
@@ -23,7 +23,7 @@ let nonce = (req, res) => {
                 address: req.query.address,
                 nonce,
                 evmAddress: req.query.address,
-                polyjuiceAddress: addressTranslator.ethAddressToGodwokenShortAddress (req.query.address),
+                // polyjuiceAddress: addressTranslator.ethAddressToGodwokenShortAddress (req.query.address),
                 displayName: req.query.address,
                 bio: ''
             }).then (() => {

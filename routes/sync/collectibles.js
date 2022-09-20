@@ -3,7 +3,7 @@ const firebase = require ('../../lib/firebase');
 const ethers = require ('ethers');
 const { getWallet } = require ('../../lib/getWallet');
 
-const { ABI } = require ('../../contracts/SqwidERC1155');
+const { ABI } = require ('../../contracts/GlowlabERC1155');
 
 const { getCloudflareURL } = require ('../../lib/getIPFSURL');
 const { default: axios } = require('axios');
@@ -30,7 +30,7 @@ let sync = async (req, res) => {
     //             const data = {
     //                 id: i,
     //                 uri,
-    //                 collection: collection || "Sqwid",
+    //                 collection: collection || "Glowlab",
     //                 createdAt: new Date (),
     //                 creator,
     //                 name

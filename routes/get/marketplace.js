@@ -1,8 +1,8 @@
 const ethers = require ('ethers');
 const { Router } = require ('express');
-const utilityContractABI = require ('../../contracts/SqwidUtility').ABI;
-const collectibleContractABI = require ('../../contracts/SqwidERC1155').ABI;
-const marketplaceContractABI = require ('../../contracts/SqwidMarketplace').ABI;
+const utilityContractABI = require ('../../contracts/GlowlabUtility').ABI;
+const collectibleContractABI = require ('../../contracts/GlowlabERC1155').ABI;
+const marketplaceContractABI = require ('../../contracts/GlowlabMarketplace').ABI;
 const { getWallet } = require ('../../lib/getWallet');
 const getNetwork = require ('../../lib/getNetwork');
 const firebase = require ('../../lib/firebase');
@@ -383,9 +383,10 @@ const fetchPositions = async (req, res) => {
                 limit
             }
         });
-        const allRawItems = await utilityContract.fetchPositions (Number (type), ownerAddress || ethers.constants.AddressZero, startFrom, startFrom ? Math.min (limit, startFrom) : limit, allowedBytes);
+        console.log (Number (type), ownerAddress?.toLowerCase () || ethers.constants.AddressZero, startFrom, startFrom ? Math.min (limit, startFrom) : limit, allowedBytes);
+        const allRawItems = await utilityContract.fetchPositions (Number (type), ownerAddress?.toLowerCase () || ethers.constants.AddressZero, startFrom, startFrom ? Math.min (limit, startFrom) : limit, allowedBytes);
         let rawItems = allRawItems.filter (item => Number (item.positionId) > 0);
-
+        console.log (allRawItems);
         const { collectibles, collections, names } = await buildObjectsFromItems (rawItems);
         const items = [];
         for (let i = 0; i < rawItems.length; i++) {
@@ -450,6 +451,9 @@ const fetchBalance = async (req, res) => {
 }
 
 const fetchWithdrawable = async (req, res) => {
+    return res.json ({
+        balance: 0
+    });
     let { evmAddress, address } = req.user;
     try {
         if (!evmAddress) evmAddress = await getEVMAddress (address);

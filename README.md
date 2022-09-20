@@ -1,4 +1,4 @@
-# Tephra backend
+# Glowlab backend
 
 ### example .env file
 ```
@@ -13,7 +13,7 @@ NFT_STORAGE_API_KEY=
 REDIS_PORT=
 REDIS_HOST=
 REDIS_PASS=
-DEFAULT_NETWORK=godwoken_testnet
+DEFAULT_NETWORK=evmos_testnet
 INFURA_IPFS_PROJECT_ID=
 INFURA_IPFS_PROJECT_SECRET=
 ```

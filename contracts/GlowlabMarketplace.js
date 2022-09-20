@@ -7,8 +7,8 @@ let ABI = [
         "type": "uint256"
       },
       {
-        "internalType": "contract ISqwidERC1155",
-        "name": "sqwidERC1155_",
+        "internalType": "contract IGlowlabERC1155",
+        "name": "glowlabERC1155_",
         "type": "address"
       }
     ],
@@ -231,7 +231,7 @@ let ABI = [
       },
       {
         "indexed": false,
-        "internalType": "enum SqwidMarketplace.PositionState",
+        "internalType": "enum GlowlabMarketplace.PositionState",
         "name": "state",
         "type": "uint8"
       }
@@ -533,7 +533,7 @@ let ABI = [
             "type": "uint256"
           }
         ],
-        "internalType": "struct SqwidMarketplace.AuctionDataResponse",
+        "internalType": "struct GlowlabMarketplace.AuctionDataResponse",
         "name": "",
         "type": "tuple"
       }
@@ -606,36 +606,9 @@ let ABI = [
             "internalType": "uint256",
             "name": "positionCount",
             "type": "uint256"
-          },
-          {
-            "components": [
-              {
-                "internalType": "address",
-                "name": "seller",
-                "type": "address"
-              },
-              {
-                "internalType": "address",
-                "name": "buyer",
-                "type": "address"
-              },
-              {
-                "internalType": "uint256",
-                "name": "price",
-                "type": "uint256"
-              },
-              {
-                "internalType": "uint256",
-                "name": "amount",
-                "type": "uint256"
-              }
-            ],
-            "internalType": "struct SqwidMarketplace.ItemSale[]",
-            "name": "sales",
-            "type": "tuple[]"
           }
         ],
-        "internalType": "struct SqwidMarketplace.Item",
+        "internalType": "struct GlowlabMarketplace.Item",
         "name": "",
         "type": "tuple"
       }
@@ -681,7 +654,7 @@ let ABI = [
             "type": "address"
           }
         ],
-        "internalType": "struct SqwidMarketplace.LoanData",
+        "internalType": "struct GlowlabMarketplace.LoanData",
         "name": "",
         "type": "tuple"
       }
@@ -732,12 +705,12 @@ let ABI = [
             "type": "uint256"
           },
           {
-            "internalType": "enum SqwidMarketplace.PositionState",
+            "internalType": "enum GlowlabMarketplace.PositionState",
             "name": "state",
             "type": "uint8"
           }
         ],
-        "internalType": "struct SqwidMarketplace.Position",
+        "internalType": "struct GlowlabMarketplace.Position",
         "name": "",
         "type": "tuple"
       }
@@ -773,7 +746,7 @@ let ABI = [
             "type": "uint256"
           }
         ],
-        "internalType": "struct SqwidMarketplace.RaffleDataResponse",
+        "internalType": "struct GlowlabMarketplace.RaffleDataResponse",
         "name": "",
         "type": "tuple"
       }
@@ -813,7 +786,7 @@ let ABI = [
   {
     "inputs": [
       {
-        "internalType": "enum SqwidMarketplace.PositionState",
+        "internalType": "enum GlowlabMarketplace.PositionState",
         "name": "state",
         "type": "uint8"
       }
@@ -843,6 +816,32 @@ let ABI = [
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "glowlabERC1155",
+    "outputs": [
+      {
+        "internalType": "contract IGlowlabERC1155",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "glowlabMigrator",
+    "outputs": [
+      {
+        "internalType": "contract IGlowlabMigrator",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -858,7 +857,7 @@ let ABI = [
   {
     "inputs": [
       {
-        "internalType": "enum SqwidMarketplace.PositionState",
+        "internalType": "enum GlowlabMarketplace.PositionState",
         "name": "",
         "type": "uint8"
       }
@@ -904,7 +903,7 @@ let ABI = [
     ],
     "name": "mint",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1082,7 +1081,7 @@ let ABI = [
         "type": "uint16"
       },
       {
-        "internalType": "enum SqwidMarketplace.PositionState",
+        "internalType": "enum GlowlabMarketplace.PositionState",
         "name": "typeFee",
         "type": "uint8"
       }
@@ -1095,8 +1094,8 @@ let ABI = [
   {
     "inputs": [
       {
-        "internalType": "contract ISqwidMigrator",
-        "name": "sqwidMigrator_",
+        "internalType": "contract IGlowlabMigrator",
+        "name": "glowlabMigrator_",
         "type": "address"
       }
     ],
@@ -1108,40 +1107,14 @@ let ABI = [
   {
     "inputs": [
       {
-        "internalType": "contract ISqwidERC1155",
-        "name": "sqwidERC1155_",
+        "internalType": "contract IGlowlabERC1155",
+        "name": "glowlabERC1155_",
         "type": "address"
       }
     ],
     "name": "setNftContractAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "sqwidERC1155",
-    "outputs": [
-      {
-        "internalType": "contract ISqwidERC1155",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "sqwidMigrator",
-    "outputs": [
-      {
-        "internalType": "contract ISqwidMigrator",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {

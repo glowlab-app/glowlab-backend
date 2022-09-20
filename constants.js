@@ -1,25 +1,25 @@
 const networks = {
-    godwoken_testnet: {
-        rpc: 'https://godwoken-testnet-v1.ckbapp.dev',
+    evmos_testnet: {
+        rpc: 'https://eth.bd.evmos.dev:8545',
         contracts: {
-            marketplace: '0xcedc1a9b6a3b0266f00d2e4198da6b6e434896ea',
-			erc1155: '0xa87071a188e3e8d3e30f53a335ecc329d88026b7',
-			utility: '0xf4505324d161551550fe33fc2bd0fB5f2bb1c0c0',
+            marketplace: '0xaC3c382A8c9c1b58f0e1d8fecf4B520f6Be833AC',
+			erc1155: '0xcCB22CdA4857E1665dE3043FF77ff125c9E0A2A7',
+			utility: '0x15D45AE2f71C708d4dc85e95961d528fdfbbCca4',
         },
-        useCache: true,
+        useCache: false,
     },
-    godwoken_mainnet: {
-        rpc: 'https://godwoken-testnet-v1.ckbapp.dev',
+    evmos_mainnet: {
+        rpc: 'https://eth.bd.evmos.org:8545',
         contracts: {
-            marketplace: '0xcedc1a9b6a3b0266f00d2e4198da6b6e434896ea',
-			erc1155: '0xa87071a188e3e8d3e30f53a335ecc329d88026b7',
-			utility: '0xf4505324d161551550fe33fc2bd0fB5f2bb1c0c0',
+            marketplace: '0xaC3c382A8c9c1b58f0e1d8fecf4B520f6Be833AC',
+			erc1155: '0xcCB22CdA4857E1665dE3043FF77ff125c9E0A2A7',
+			utility: '0x15D45AE2f71C708d4dc85e95961d528fdfbbCca4',
         },
-        useCache: true,
+        useCache: false,
     }
 }
 
 module.exports = {
     networks,
-    defaultNetwork: process.env.DEFAULT_NETWORK || 'godwoken_mainnet'
+    defaultNetwork: process.env.DEFAULT_NETWORK || 'evmos_mainnet'
 }

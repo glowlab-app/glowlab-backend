@@ -8,9 +8,9 @@ const sharp = require ('sharp');
 const getNetwork = require('../../lib/getNetwork');
 // const { FieldValue } = require ('firebase-admin').firestore;
 
-const collectibleContractABI = require ('../../contracts/SqwidERC1155').ABI;
-const marketplaceContractABI = require ('../../contracts/SqwidMarketplace').ABI;
-const utilityContractABI = require ('../../contracts/SqwidUtility').ABI;
+const collectibleContractABI = require ('../../contracts/GlowlabERC1155').ABI;
+const marketplaceContractABI = require ('../../contracts/GlowlabMarketplace').ABI;
+const utilityContractABI = require ('../../contracts/GlowlabUtility').ABI;
 
 const { getEVMAddress } = require ('../../lib/getEVMAddress');
 const cors = require ('cors');
@@ -51,7 +51,7 @@ let upload = async (req, res, next) => {
         if (collection.data ().owner === req.user.address || col === "ASwOXeRM5DfghnURP4g2") {
             try {
                 const metadata = await client.store ({
-                    name: req.body.name || "Empty Sqwid",
+                    name: req.body.name || "Empty Glowlab",
                     description: req.body.description || "",
                     properties: {
                         custom: JSON.parse (req.body.properties) || {},
@@ -104,7 +104,7 @@ let sync = async (req, res, next) => {
     //             const data = {
     //                 id: i,
     //                 uri,
-    //                 collection: collection || "Sqwid",
+    //                 collection: collection || "Glowlab",
     //                 createdAt: new Date (),
     //                 creator,
     //                 name
@@ -270,7 +270,7 @@ let upload = async (req, res, next) => {
                 }
 
                 const metadata = {
-                    name: req.body.name || 'Empty Sqwid',
+                    name: req.body.name || 'Empty Glowlab',
                     description: req.body.description || "",
                     image: `ipfs://${uploads [1]}`,
                     media: `ipfs://${uploads [3] || uploads [2]}`,

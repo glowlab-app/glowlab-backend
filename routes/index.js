@@ -44,7 +44,7 @@ module.exports = () => {
     // router.use ('/verifyjwt', getVerifyJWTRoutes ());
 
     router.get ('/', (req, res) => {
-        res.send ('Tephra API');
+        res.send ('Kosm API');
     });
 
     return router;

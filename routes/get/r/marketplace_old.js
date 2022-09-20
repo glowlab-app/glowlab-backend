@@ -1,8 +1,8 @@
 const ethers = require ('ethers');
 const { Router } = require ('express');
-const collectibleContractABI = require ('../../../contracts/SqwidERC1155').ABI;
-const marketplaceContractABI = require ('../../../contracts/SqwidMarketplace').ABI;
-const utilityContractABI = require ('../../../contracts/SqwidUtility').ABI;
+const collectibleContractABI = require ('../../../contracts/GlowlabERC1155').ABI;
+const marketplaceContractABI = require ('../../../contracts/GlowlabMarketplace').ABI;
+const utilityContractABI = require ('../../../contracts/GlowlabUtility').ABI;
 const { getDwebURL, getCloudflareURL } = require ('../../../lib/getIPFSURL');
 const axios = require ('axios');
 const { getWallet } = require ('../../../lib/getWallet');
