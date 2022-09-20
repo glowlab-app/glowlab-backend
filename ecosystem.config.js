@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     script: 'index.js',
-    name: 'sqwid-api',
+    name: 'glowlab-api',
     instances: 'max'
   }]
 };
