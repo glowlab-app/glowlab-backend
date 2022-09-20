@@ -44,7 +44,7 @@ module.exports = () => {
     // router.use ('/verifyjwt', getVerifyJWTRoutes ());
 
     router.get ('/', (req, res) => {
-        res.send ('Kosm API');
+        res.send ('Glowlab API');
     });
 
     return router;
